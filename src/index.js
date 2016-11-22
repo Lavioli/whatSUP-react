@@ -16,7 +16,7 @@ const routes = (
 	<Provider store={store}>
 		<Router history={hashHistory}>
 			<Route path="/" component={Homepage} />
-			<Route path="/login component={Login}" />
+			<Route path="/login" component={Login} />
 			<Route path="/axios" component={AxiosTest} />
 		</Router>
 	</Provider>
