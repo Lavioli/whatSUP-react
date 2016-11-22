@@ -6,6 +6,7 @@ import store from './js/store';
 
 // import App from './App';
 import Homepage from './js/components/Homepage';
+import AxiosTest from './js/components/AxiosTest';
 
 import './index.css';
 
@@ -14,6 +15,8 @@ const routes = (
 	<Provider store={store}>
 		<Router history={hashHistory}>
 			<Route path="/" component={Homepage} />
+
+			<Route path="/axios" component={AxiosTest} />
 		</Router>
 	</Provider>
 );

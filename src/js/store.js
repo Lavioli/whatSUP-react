@@ -1,4 +1,4 @@
-import redux from 'redux';
+// import redux from 'redux';
 import {createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import whatsupReducer from './reducers/reducers';
