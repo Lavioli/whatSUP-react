@@ -13,7 +13,6 @@ const whatsupReducer =(state, action) => {
 	console.log(actions.logInSucess);
 	switch(action.type) {
 		case actions.LOG_IN_SUCCESS:
-			console.log('i am in', state)
 			newState = Object.assign({}, state, {dummy_State: 'logged in'});
 			return newState;
 		default:
