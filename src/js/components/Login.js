@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
+import {logIn} from '../actions/user-actions';
 import {connect} from 'react-redux';
-
 
 let createHandlers = (dispatch) => {
 
     let logInSubmit = (event) => {
         event.preventDefault();
-        dispatch(actions.login(event.target.username.value, event.target.password.value));
+        dispatch(actions.logIn(event.target.username.value, event.target.password.value));
     }
     return {
         logInSubmit
@@ -22,7 +22,7 @@ class Login extends Component {
         return (
             <div>
                 <Nav />
-                <h1>Medication Reminder</h1>
+                <h1>Log In</h1>
                 <form id="loginForm" onSubmit={this.handlers.logInSubmit}>
                     <div id="border-form" className="form-group">
                         <h1>LOGIN</h1>
