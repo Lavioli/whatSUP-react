@@ -11,17 +11,19 @@ export const logOut = createAction('LOG_OUT');
 export const logIn = (username, password) => dispatch => {
 	dispatch(setLogInIsSubmitting(true));
 
-	return axios.get('https://frozen-inlet-36024.herokuapp.com/api/v1/users', {auth: { username, password } })
+	return axios.get('http://localhost:8080/api/v1/users', {auth: { username, password } })
 		.then(() => {
+			console.log('success')
 			dispatch(logInSucess({ username, password }));
 			// dispatch(setLogInIsSubmitting(false));
 			return { username, password };
 		})
-		// .catch(err => {
-		// 	dispatch(logInError(err));
-		// 	dispatch(setLogInIsSubmitting(false));
-		// 	return false;
-		// });
+		.catch(err => {
+			dispatch(logInError(err));
+			console.log('error')
+			dispatch(setLogInIsSubmitting(false));
+			return false;
+		});
 }
 
 
